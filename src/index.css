@@ -1,0 +1,104 @@
+/* src/index.css */
+
+/* --- CSS Reset/Normalization --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Variables --- */
+:root {
+  /* Colors */
+  --color-black: #141414; /* Main Netflix Background */
+  --color-white: #ffffff;
+  --color-red: #e50914; /* Netflix Red Accent */
+  --color-gray-dark: #333; /* Darker Gray for subtle elements */
+  --color-text-light: #e5e5e5; /* Standard text color */
+  --color-backdrop: rgba(0, 0, 0, 0.7); /* Modal/Overlay backdrop */
+
+  /* Typography */
+  --font-family-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
+  /* Layout */
+  --header-height: 68px;
+}
+
+/* --- Global Styles --- */
+
+html {
+  font-family: var(--font-family-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-text-light);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* --- Scrollbar Styling (Netflix Aesthetic) --- */
+/* For WebKit browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--color-black);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-dark);
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* --- Utility Classes (Mimicking Netflix styling) --- */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+.text-red {
+  color: var(--color-red);
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+.hover-opacity:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Hide scrollbar on specific elements if needed without affecting content display */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
